@@ -1,0 +1,104 @@
+﻿@model Sistema.Models.Clientes
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<link href="~/Content/bootstrap.css" rel="stylesheet" crossorigin="anonymous">
+<link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" crossorigin="anonymous">
+<!-- Bootstrap core CSS -->
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
+<h2>Detalhes do Cliente:</h2>
+
+<div>
+   
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cep)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cep)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rua)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rua)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.bairro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.bairro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cidade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cidade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.uf)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.uf)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ibge)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ibge)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @{
+        string editar_cliente = Url.Action("Edit", new { id = Model.id });
+    }
+    <input class="btn btn-primary btn-sm" type="button" value="Editar" onclick="window.location.href = '@editar_cliente'" />
+
+    @{
+        string voltar_index = Url.Action("Index", "Clientes");
+    }
+    <input class="btn btn-warning btn-sm" type="button" value="Voltar" onclick="window.location.href = '@voltar_index'" />
+
+</p>

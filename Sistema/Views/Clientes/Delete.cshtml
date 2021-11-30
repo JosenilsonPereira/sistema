@@ -1,0 +1,109 @@
+﻿@model Sistema.Models.Clientes
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+<link href="~/Content/bootstrap.css" rel="stylesheet" crossorigin="anonymous">
+<link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" crossorigin="anonymous">
+<!-- Bootstrap core CSS -->
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
+<h2>Deletar Cliente:</h2>
+
+<h3> Tem certeza que deseja Deletar esse cliente ? </h3>
+<div>
+   
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cep)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cep)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rua)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rua)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.bairro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.bairro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cidade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cidade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.uf)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.uf)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ibge)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ibge)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+<div class="form-actions no-color">
+    <input type="submit" value="Deletar" class="btn btn-danger btn-sm"  onclick="return confirm('Confirmar exclusão de registro?');"/>
+
+    @{
+        string voltar_index = Url.Action("Index", "Clientes");
+    }
+
+    <input class="btn btn-warning btn-sm" type="button" value="Voltar" onclick="window.location.href = '@voltar_index'" />
+
+</div>
+    }
+</div>

@@ -1,0 +1,111 @@
+﻿@model IEnumerable<Sistema.Models.Clientes>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<br />
+<br />
+
+<h2>Lista de Clientes:</h2>
+
+<td>
+    @{
+        string novo_cadastro = Url.Action("Create", "Clientes");
+    }
+    <input class="btn btn-secondary" type="button" value="Novo Cadastro" onclick="window.location.href = '@novo_cadastro'" />
+
+</td>
+<br />
+<br />
+
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Nome:</th>
+            <th scope="col">Email:</th>
+            <th scope="col">Telefone:</th>
+            <th scope="col">Cep:</th>
+            <th scope="col">Rua:</th>
+            <th scope="col">Bairro:</th>
+            <th scope="col">Cidade:</th>
+            <th scope="col">UF:</th>
+            <th scope="col">Ibge:</th>
+            <th scope="col">Editar:</th>
+            <th scope="col">Detalhes:</th>
+            <th scope="col">Deletar:</th>
+        </tr>
+
+
+
+
+
+
+    </thead>
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.telefone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cep)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.rua)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.bairro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cidade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.uf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ibge)
+            </td>
+
+
+            <td>
+                @{
+                    string url = Url.Action("Edit", new { id = item.id });
+                }
+                <input class="btn btn-primary" type="button" value="Editar" onclick="window.location.href = '@url'" />
+
+            </td>
+
+            <td>
+                @{
+                    string url2 = Url.Action("Details", new { id = item.id });
+                }
+                <input class="btn btn-info" type="button" value="Detalhes" onclick="window.location.href = '@url2'" />
+
+            </td>
+
+            <td>
+                @{
+                    string url3 = Url.Action("Delete", new { id = item.id });
+                }
+                <input class="btn btn-danger" type="button" value="Deletar" onclick="window.location.href = '@url3'" />
+
+            </td>
+
+
+        </tr>
+    }
+
+
+
+
+</table>
